@@ -74,7 +74,7 @@ data1 = filter_by_amenieties(data1)
 
 st.text_input('Insight 1:', value='There is only one Airbnb that costs more than 3000 a night', max_chars=None, key=None, type='default')
 
-st.text_input('Insight 2:', value='There are only 3 Airbnb that offer breakfast', max_chars=None, key=None, type='default')
+st.text_input('Insight 2:', value='There are only 3 Airbnb Locations that offer breakfast', max_chars=None, key=None, type='default')
 
 
 print(data1)

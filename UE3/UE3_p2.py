@@ -68,14 +68,14 @@ def filter_by_amenieties(data):
 
 render_info()
 data = load_data()
-data1 = filter_by_price(data)
-data1 = filter_by_property_type(data1)
-data1 = filter_by_amenieties(data1)
+data = filter_by_price(data)
+data = filter_by_property_type(data)
+data = filter_by_amenieties(data)
 
 st.text_input('Insight 1:', value='There is only one Airbnb that costs more than 3000 a night', max_chars=None, key=None, type='default')
 
 st.text_input('Insight 2:', value='There are only 3 Airbnb Locations that offer breakfast', max_chars=None, key=None, type='default')
 
 
-print(data1)
-render_map(data1)
+print(data)
+render_map(data)

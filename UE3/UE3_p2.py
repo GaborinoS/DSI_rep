@@ -62,7 +62,7 @@ def filter_by_amenieties(data):
     unique_a = pd.Series(split_list(data['amenities'])).drop_duplicates()
     amenities = st.sidebar.selectbox('Filter by different amenities:', [''] + list(unique_a))
     if amenities:
-        data = data[[amenities in x for x in data['amenities']]]
+        data = data[[(amenities in x) for x in data['amenities']]]
     return data
 
 
@@ -72,8 +72,9 @@ data1 = filter_by_price(data)
 data1 = filter_by_property_type(data1)
 data1 = filter_by_amenieties(data1)
 
-st.text_input('Insights:', value='Halloooooo', max_chars=None, key=None, type='default')
+st.text_input('Insight 1:', value='There is only one Airbnb that costs more than 3000 a night', max_chars=None, key=None, type='default')
 
+st.text_input('Insight 2:', value='There are only 3 Airbnb that offer breakfast', max_chars=None, key=None, type='default')
 
 
 print(data1)

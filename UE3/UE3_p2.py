@@ -51,15 +51,16 @@ def filter_by_property_type(data):
         return data[data['property_type'] == property_type]
     return data
 
-def split_list(list):
+def split(list):
     new_list = []
     for sublist in list:
         for item in sublist:
             new_list.append(item)
     return new_list
+
 #filter by amenities
 def filter_by_amenieties(data):
-    unique_a = pd.Series(split_list(data['amenities'])).drop_duplicates()
+    unique_a = pd.Series(split(data['amenities'])).drop_duplicates()
     amenities = st.sidebar.selectbox('Filter by different amenities:', [''] + list(unique_a))
     if amenities:
         data = data[[(amenities in x) for x in data['amenities']]]
